@@ -1,0 +1,7 @@
+- name: Download cfssl binaries
+  get_url:
+    url: "{{ cfssl_pkg_base_url}}/{{ item }}_{{ cfssl_platform }}"
+    checksum: "sha256:{{ cfssl_checksums[item + '_' + cfssl_platform] }}"
+    dest: "{{ cfssl_install_location }}/{{ item }}"
+    mode: 0755
+  with_items: "{{ cfssl_files }}"
