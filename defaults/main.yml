@@ -4,7 +4,11 @@ cfssl_install_location: /usr/local/bin
 cfssl_files:
   - cfssl
   - cfssljson
-
 cfssl_checksums:
   cfssl_linux-amd64: md5:bd2eb09fd934ffa62e69209dbf762617
   cfssljson_linux-amd64: md5:bdbcf85314dd84c4a5b8c59078e77928
+cfssl_server_expiry_years: 1
+cfssl_client_expiry_years: 1
+cfssl_peer_expiry_years: 1
+cfssl_intermediate_expiry_years: 10
+cfssl_intermediate_max_path_len: 1
