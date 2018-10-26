@@ -11,4 +11,4 @@ cfssl_server_expiry_years: 1
 cfssl_client_expiry_years: 1
 cfssl_peer_expiry_years: 1
 cfssl_intermediate_expiry_years: 10
-cfssl_intermediate_max_path_len: 1
+cfssl_intermediate_max_path_len: 0
