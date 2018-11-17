@@ -1,11 +1,10 @@
-- name: Download cfssl binaries
-  get_url:
-    url: "{{ cfssl_pkg_base_url + item }}_{{ cfssl_platform }}"
-    checksum: "{{ cfssl_checksums[item + '_' + cfssl_platform] }}"
-    dest: "{{ cfssl_install_location }}/{{ item }}"
-    mode: 0755
-  with_items: "{{ cfssl_files }}"
-- name: Create configuration directory
-  file: path=/etc/cfssl state=directory
-- name: Copy configuration file
-  template: src=config.json.j2 dest=/etc/cfssl/config.json
+- name: Configure cfssl YUM repository
+  yum_repository:
+    name: cfssl
+    description: cfssl
+    baseurl: "{{ cfssl_yum_repo_url }}"
+    gpgcheck: no
+- name: Ensure cfssl is installed and up to date
+  package:
+    name: cfssl-{{ cfssl_version }}
+    state: latest

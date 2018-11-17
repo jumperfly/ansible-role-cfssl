@@ -1,14 +1,2 @@
-cfssl_pkg_base_url: https://bintray.com/jumperfly/cfssl/download_file?file_path=
-cfssl_platform: linux-amd64
-cfssl_install_location: /usr/local/bin
-cfssl_files:
-  - cfssl
-  - cfssljson
-cfssl_checksums:
-  cfssl_linux-amd64: md5:bd2eb09fd934ffa62e69209dbf762617
-  cfssljson_linux-amd64: md5:bdbcf85314dd84c4a5b8c59078e77928
-cfssl_server_expiry_years: 1
-cfssl_client_expiry_years: 1
-cfssl_peer_expiry_years: 1
-cfssl_intermediate_expiry_years: 10
-cfssl_intermediate_max_path_len: 0
+cfssl_yum_repo_url: https://dl.bintray.com/jumperfly/yum/cfssl/stable
+cfssl_version: 1.3.2
