@@ -1,2 +1,10 @@
-- include_tasks: cfssl.yml
-  tags: cfssl
+- name: Configure cfssl YUM repository
+  yum_repository:
+    name: cfssl
+    description: cfssl
+    baseurl: "{{ cfssl_yum_repo_url }}"
+    gpgcheck: no
+- name: Ensure cfssl is installed
+  yum:
+    name: cfssl-{{ cfssl_version }}
+    state: present

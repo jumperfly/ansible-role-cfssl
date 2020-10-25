@@ -1,2 +1,2 @@
 cfssl_yum_repo_url: https://dl.bintray.com/jumperfly/yum/cfssl/stable
-cfssl_version: 1.3.2
+cfssl_version: 1.5.0

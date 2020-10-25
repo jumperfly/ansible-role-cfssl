@@ -1,5 +1,0 @@
-- hosts: all
-  become: yes
-  tasks:
-  - name: Copy role
-    synchronize: src=/vagrant/ dest=/etc/ansible/roles/cfssl/ rsync_opts=--exclude=.git
